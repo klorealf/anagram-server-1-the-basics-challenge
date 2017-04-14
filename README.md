@@ -37,7 +37,7 @@ $ bundle exec rake db:seed
 Our application needs to find anagrams for a given word.  Our `Word` model will be responsible for this behavior.  An instance of the `Word` class will return anagrams of itself:
 
 ```ruby
-class Word < ActiveRecord::Base
+class Word < ApplicationRecord
   def anagrams
     # Returns a collection of Word objects that are anagrams
     # of the instance on which the method is called.
