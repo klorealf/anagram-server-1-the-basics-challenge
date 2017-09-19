@@ -1,6 +1,9 @@
 class Word < ApplicationRecord
   def anagrams
-    # Returns a collection of Word objects that are anagrams
-    # of the instance on which the method is called.
+    hsh = {}
+    File.foreach(WORD_LIST_FILENAME) do |line|
+    # write code to create a new record in the database for each line of the input file
+      hsh[line.chars.sort.join.downcase] = Word.create(word: line)
+    end
   end
 end
