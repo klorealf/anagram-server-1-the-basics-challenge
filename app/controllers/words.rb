@@ -1,6 +1,6 @@
 get '/words/:word' do
-  @word = params[:word]
-
-  # Look in app/views/anagrams/index.erb
+  @word = Word.new(word: params[:word])
+  @list_word = @word.anagrams
   erb :"words/index"
 end
+

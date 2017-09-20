@@ -1,6 +1,10 @@
 <main class="container">
   <h1>
-    <%= @word.capitalize %>
-  </h1>
-  <p>The anagrams of "<%= @word %>" are ...</p>
+
+      </h1>
+  <p>The anagrams of <%= @word.word%> are ...</p>
+    <ul>
+      <li><%=@list_word.join("<br>")%></li>
+    </ul>
+
 </main>
