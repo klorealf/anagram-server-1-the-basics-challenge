@@ -7,6 +7,15 @@ class Word < ApplicationRecord
       word = word.gsub("\n","")
       hsh_words[word] = word.chars.sort.join.downcase
     end
-    return hsh_words.select{|k, v| v == self.word.chars.sort.join.downcase}.map{|k, v| k}
+    searched_word = self.word.gsub("\n","")
+    return hsh_words.select{|k, v| v == searched_word.chars.sort.join.downcase}.map{|k, v| k}
   end
 end
+
+# class Word < ApplicationRecord
+#   def anagrams
+#     Word.where("length(word) = ?", self.word.length).select do |elm_word|
+#       elm_word.word.chars.sort == self.word.chars.sort
+#     end
+#   end
+# end
