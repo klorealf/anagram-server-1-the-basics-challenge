@@ -1,6 +1,19 @@
 <main class="container">
-  <h1>
-    <%= @word.capitalize %>
-  </h1>
-  <p>The anagrams of "<%= @word %>" are ...</p>
+
+  <form id="anagram_entry" action="/words" method="post">
+    <label for="entry_title">Enter a word:</label>
+    <input type="text" name="entered_word">
+    <br>
+    <input type="submit" value="Find">
+  </form>
+
+  <%if @word %>
+    <h1>
+      <%= @test.capitalize %>
+    </h1>
+    <p>The anagrams of "<%= @test %>" are ...</p>
+    <p>-<%= @output.join("<br>-") %></p>
+
+  <% end %>
+
 </main>
