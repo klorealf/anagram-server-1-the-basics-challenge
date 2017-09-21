@@ -3,4 +3,7 @@
     <%= @word.capitalize %>
   </h1>
   <p>The anagrams of "<%= @word %>" are ...</p>
+  <% @FoundWordsArray.each do |word| %>
+  <%= word[word] %>
+  <% end %>
 </main>
