@@ -14,6 +14,8 @@ gem 'activesupport', '~> 5.0'
 gem 'rake', '~> 12.0.0'
 
 gem 'shotgun'
+gem 'pry'
+
 
 group :test do
   gem 'shoulda-matchers'
@@ -26,3 +28,4 @@ group :test, :development do
   gem 'factory_girl'
   gem 'faker', '~> 1.7.3'
 end
+

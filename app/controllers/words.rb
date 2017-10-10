@@ -1,8 +1,17 @@
+get "words/" do
+  redirect "/"
+end
+
 get '/words/:word' do
   @word = params[:word]
-  # # Look in app/views/anagrams/index.erb
-  @anagram = Word.new(word: params[:word]).anagrams
-  # @anagram = @word.anagrams
-  # puts @anagram
+
+  @anagram = Word.anagrams(params[:word])
+
+  erb :"words/index"
+end
+
+post '/words' do
+  @word = params[:input_word]
+  @anagram = Word.anagrams(@word)
   erb :"words/index"
 end
