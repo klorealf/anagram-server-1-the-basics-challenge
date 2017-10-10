@@ -3,4 +3,15 @@
     <%= @word.capitalize %>
   </h1>
   <p>The anagrams of "<%= @word %>" are ...</p>
+
+
+
+
+  <% @anagram.each do |w| %>
+  <ul>
+    <li><%= w.word %></li>
+  </ul>
+<% end %>
 </main>
+
+
